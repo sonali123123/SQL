@@ -1,0 +1,15 @@
+#Q19.  Consider a database with two tables: "Orders" and "Customers." Write an SQL query to retrieve the top 5 customers who have made the most orders, along with the total count of their orders. 
+#Display the results in descending order of the order count and ascending order of customer names
+
+SELECT
+    C.CustomerName,
+    COUNT(O.OrderID) AS OrderCount
+FROM
+    Customers C
+JOIN
+    Orders O ON C.CustomerID = O.CustomerID
+GROUP BY
+    C.CustomerID, C.CustomerName
+ORDER BY
+    OrderCount DESC, CustomerName ASC
+LIMIT 5;
