@@ -1,0 +1,14 @@
+#Q17. Write a SQL to get the cumulative sum of an employee’s salary over a period of 3 month but exclude the most recent month? 
+#The result should be display by id ascending and then by month decending ? 
+
+WITH SalaryData AS (
+    SELECT 
+        ID,
+        MONTH(SalaryDate) AS Month,
+        SUM(Salary) OVER (PARTITION BY ID ORDER BY SalaryDate ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS CumulativeSum
+    FROM EmployeeSalary
+)
+SELECT ID, Month, CumulativeSum
+FROM SalaryData
+WHERE Month <> (SELECT MAX(Month) FROM SalaryData)
+ORDER BY ID ASC, Month DESC;
