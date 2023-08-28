@@ -1,0 +1,6 @@
+#Q14.  Write an SQL query to fetch the second highest number from the "student" table.? 
+
+
+SELECT MAX(Age) AS SecondHighestAge
+FROM Student
+WHERE Age < (SELECT MAX(Age) FROM Student);
