@@ -1,0 +1,19 @@
+#Q11. Create Student Table with ID as Primary Key and NOT NULL , Name as 20 Characters ,Age as Int value both are NOT NULL and Address have  25 charter And Insert Any
+#5 Records?  
+
+
+
+CREATE TABLE Student (
+    ID INT PRIMARY KEY NOT NULL,
+    Name VARCHAR(20) NOT NULL,
+    Age INT NOT NULL,
+    Address VARCHAR(25)
+);
+
+INSERT INTO Student (ID, Name, Age, Address)
+VALUES
+    (1, 'Alice', 20, '123 Main St'),
+    (2, 'Bob', 22, '456 Elm St'),
+    (3, 'Charlie', 19, '789 Oak St'),
+    (4, 'David', 21, '234 Maple Ave'),
+    (5, 'Eve', 23, '567 Pine Rd');
