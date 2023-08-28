@@ -1,0 +1,6 @@
+#Q12.  Write an SQL query to find the youngest student in the "student" table ? Note: Add "GitHub" link for the solution if required  
+
+SELECT *
+FROM Student
+ORDER BY Age ASC
+LIMIT 1;
