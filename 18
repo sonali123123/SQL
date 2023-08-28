@@ -1,0 +1,6 @@
+#Q18.  Write the Query to find the Shortest Distance in Plane
+
+
+SELECT 
+    SQRT(POW(X, 2) + POW(Y, 2)) AS ShortestDistance
+FROM PlaneCoordinates;
